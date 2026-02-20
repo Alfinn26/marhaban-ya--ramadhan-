@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marhaban Ya Ramadhan 1447 H</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #14532d, #052e16 70%);
+    color:white;
+    text-align:center;
+}
+
+/* Bintang */
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation: blink 2s infinite alternate;
+}
+
+@keyframes blink{
+    from{opacity:0.2;}
+    to{opacity:1;}
+}
+
+/* Bulan sabit */
+.moon{
+    position:absolute;
+    top:60px;
+    right:120px;
+    width:120px;
+    height:120px;
+    background:#facc15;
+    border-radius:50%;
+    box-shadow:0 0 40px #facc15, 0 0 80px #fde047;
+}
+
+.moon::after{
+    content:"";
+    position:absolute;
+    width:120px;
+    height:120px;
+    background:#052e16;
+    border-radius:50%;
+    left:30px;
+    top:10px;
+}
+
+/* Lampion */
+.lampion{
+    position:absolute;
+    width:60px;
+    height:90px;
+    background: radial-gradient(circle at 50% 30%, #fff8b0, #ffc107 70%);
+    border-radius:30px;
+    box-shadow:0 0 25px #ffc107, 0 0 60px #ffd43b;
+    animation: swing 4s ease-in-out infinite alternate;
+}
+
+.l1{ left:20%; top:0; }
+.l2{ right:20%; top:20px; }
+
+@keyframes swing{
+    from{ transform:rotate(-5deg); }
+    to{ transform:rotate(5deg); }
+}
+
+/* Card */
+.container{
+    position:relative;
+    padding:50px 70px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(12px);
+    border-radius:25px;
+    box-shadow:0 25px 50px rgba(0,0,0,0.4);
+    animation: fadeIn 2s ease forwards;
+    opacity:0;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity:0;
+        transform:translateY(40px) scale(0.9);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+h1{
+    font-size:45px;
+    color:#facc15;
+    margin-bottom:15px;
+}
+
+p{
+    font-size:18px;
+    margin:6px 0;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    h1{ font-size:28px; }
+    .container{ padding:30px; }
+}
+</style>
+</head>
+<body>
+
+<div class="moon"></div>
+
+<div class="lampion l1"></div>
+<div class="lampion l2"></div>
+
+<div class="container">
+    <h1>🌙 Marhaban Ya Ramadhan 🌙</h1>
+    <p>Selamat Menunaikan Ibadah Puasa</p>
+    <p><strong>Tahun 1447 Hijriyah</strong></p>
+    <br>
+    <p>Semoga Ramadhan kali ini membawa keberkahan,</p>
+    <p>kedamaian dan ampunan untuk kita semua 🤍</p>
+</div>
+
+<script>
+/* Generate Bintang Otomatis */
+for(let i=0;i<80;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"vh";
+    star.style.left=Math.random()*100+"vw";
+    star.style.animationDuration=(Math.random()*2+1)+"s";
+    document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
